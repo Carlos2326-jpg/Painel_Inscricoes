@@ -1,0 +1,82 @@
+:root {
+    --header-color-bord: hsla(181, 43%, 60%, 0.30);
+    --header-color-background: rgba(35, 30, 65, 0.15);
+    --color-text: #ffffff;
+}
+
+.header {
+    width: 1040px;
+    height: 573px;
+
+    background: var(--header-color-background);
+    backdrop-filter: blur(20px);
+
+    border: 2px solid var(--header-color-bord);
+    border-radius: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 80px;
+
+    box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 580px;
+}
+
+.text {
+    color: var(--color-text);
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.title-h1 {
+    font-weight: 800;
+    font-size: 84px;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.description {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.price-info {
+    font-weight: 400;
+    font-size: 16px;
+    opacity: 0.85;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.logos-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img {
+    height: 40px;
+    object-fit: contain;
+}
