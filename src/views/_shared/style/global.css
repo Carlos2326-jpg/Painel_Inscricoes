@@ -1,0 +1,30 @@
+:root {
+    --color-grid-1: #3E2260;
+    --color-grid-2: #503060;
+    --color-grid-3: #300E54;
+    --color-grid-4: #241238;
+    --color-grid-5: #100620;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(
+        to bottom,
+        var(--color-grid-1),
+        var(--color-grid-2),
+        var(--color-grid-3),
+        var(--color-grid-4),
+        var(--color-grid-5)
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,32 @@
+:root {
+    --color-button: #E30652;
+    --color-button-txt: #ffffff;
+    --color-button-hover: #c40445;
+}
+
+.button {
+    background-color: var(--color-button);
+    color: var(--color-button-txt);
+
+    width: 422px;
+    height: 82px;
+
+    border: none;
+    border-radius: 30px;
+
+    font-weight: 600;
+    font-size: 24px;
+    font-family: inherit;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0px 6px 16px rgba(227, 6, 82, 0.35);
+}
+
+.button:hover {
+    background-color: var(--color-button-hover);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
