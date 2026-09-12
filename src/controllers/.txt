@@ -1,0 +1,5 @@
+ # Lógica de controle (C do MVC)
+
+│   ├── controllers/               # Lógica de controle (C do MVC)
+│   │   ├── inscricaoController.js
+│   │   └── authController.js
