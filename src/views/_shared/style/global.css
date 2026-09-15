@@ -14,7 +14,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(
         to bottom,
         var(--color-grid-1),
@@ -23,7 +23,6 @@ body {
         var(--color-grid-4),
         var(--color-grid-5)
     );
-
     display: flex;
     align-items: center;
     justify-content: center;
