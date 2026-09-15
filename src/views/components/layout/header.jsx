@@ -16,7 +16,7 @@ export default function Header() {
                     Três dias de conhecimento, inovação e conexões para transformar ideias em novas possibilidades.
                 </p>
 
-                <section className='footer-content'>
+                <section className='button-content'>
                     <Button text="Quero participar" />
 
                     <p className='text text-p price-info'>
