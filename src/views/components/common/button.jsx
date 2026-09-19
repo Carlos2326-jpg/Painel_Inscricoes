@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../_shared/style/components/button.css';
+import '../../_shared/style/components/common/button.css';
 
 export default function Button({
     type = 'button',
