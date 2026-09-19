@@ -1,5 +1,5 @@
 import Button from '../common/button';
-import '../../_shared/style/layout/footer.css'
+import '../../_shared/style/components/layout/footer.css'
 
 export default function Footer() {
     return (

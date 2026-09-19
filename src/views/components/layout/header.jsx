@@ -1,5 +1,5 @@
 import Button from '../common/button';
-import '../../_shared/style/layout/header.css';
+import '../../_shared/style/components/layout/header.css';
 
 import logoCPS from '../../assets/logoCPS.png';
 import logoFatec from '../../assets/logoFatec.png';
