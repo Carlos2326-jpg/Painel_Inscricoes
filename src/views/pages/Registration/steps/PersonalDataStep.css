@@ -1,0 +1,76 @@
+.personal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.64fr);
+  grid-template-areas:
+    'intro fields'
+    'action fields';
+  column-gap: clamp(1.5rem, 6.5cqw, 4.5rem);
+  row-gap: 1.4rem;
+  align-content: center;
+  padding: clamp(4.5rem, 9cqw, 6.5rem) var(--pad-x) clamp(2rem, 4.5cqw, 3.2rem);
+}
+
+.personal__intro {
+  grid-area: intro;
+  align-self: end;
+  display: grid;
+  gap: 1rem;
+}
+
+.personal__title {
+  font-size: clamp(2.4rem, 6.9cqw, 4.6rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  max-width: 6.3em; /* quebra em 3 linhas: "Vamos / começar sua / inscrição!" */
+}
+
+.personal__subtitle {
+  max-width: 28ch;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  color: var(--color-text-soft);
+}
+
+.personal__fields {
+  grid-area: fields;
+  align-self: center;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.personal__students {
+  margin-bottom: 0.55rem;
+}
+
+.personal__action {
+  grid-area: action;
+  align-self: start;
+  width: min(100%, 28rem);
+}
+
+/* ---------- Tablet / celular: uma coluna ---------- */
+@container deck (max-width: 760px) {
+  .personal {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'intro'
+      'fields'
+      'action';
+    row-gap: 1.6rem;
+    padding-top: 4.25rem;
+  }
+
+  .personal__intro {
+    align-self: start;
+  }
+
+  .personal__title {
+    font-size: clamp(2.2rem, 10.5cqw, 3.2rem);
+    max-width: none;
+  }
+
+  .personal__action {
+    width: 100%;
+  }
+}

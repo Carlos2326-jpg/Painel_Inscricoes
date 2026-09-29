@@ -1,0 +1,37 @@
+.success {
+  display: grid;
+  justify-items: center;
+  gap: clamp(2.5rem, 9cqw, 5.5rem);
+  padding: clamp(4rem, 8cqw, 6rem) var(--pad-x) clamp(2rem, 4.5cqw, 3.2rem);
+  text-align: center;
+}
+
+.success__message {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.success__title {
+  max-width: 14ch;
+  font-size: clamp(2.5rem, 7cqw, 4.75rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.success__highlight {
+  color: var(--color-accent);
+}
+
+.success__text {
+  max-width: 44ch;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--color-text-soft);
+}
+
+.success__action {
+  width: min(100%, 24rem);
+}

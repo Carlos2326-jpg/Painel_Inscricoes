@@ -1,0 +1,23 @@
+/* Estado base = "ainda não apareceu" (espera à direita, invisível). */
+.reveal {
+  opacity: 0;
+  transform: translate3d(2rem, 0, 0);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s ease;
+}
+
+/* Introdução: só começa depois da caixa chegar ao centro, e os itens entram em sequência. */
+.step-panel[data-state='active'] .reveal {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s ease calc(0.5s + var(--i, 0) * 0.08s),
+    transform 0.85s var(--ease-out) calc(0.5s + var(--i, 0) * 0.08s);
+}
+
+/* Saída: o texto some rápido, arrastando levemente para a esquerda (a caixa vira "aba"). */
+.step-panel[data-state='stacked'] .reveal,
+.step-panel[data-state='gone'] .reveal {
+  transform: translate3d(-2.5rem, 0, 0);
+}

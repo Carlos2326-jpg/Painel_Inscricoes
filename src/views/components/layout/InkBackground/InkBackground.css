@@ -1,0 +1,51 @@
+.ink {
+  --ink-pad: 90px;
+  --ink-blur: clamp(28px, 4vw, 64px);
+
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(120% 90% at 60% 55%, #4a2b74 0%, #341758 45%, #200a3f 100%);
+}
+
+/* Camada maior que a tela: o desfoque não deixa borda clara nas laterais. */
+.ink__layer {
+  position: absolute;
+  inset: calc(var(--ink-pad) * -1);
+  filter: blur(var(--ink-blur));
+}
+
+.ink__blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40vmax;
+  height: 40vmax;
+  transition:
+    transform 2s var(--ease-ink),
+    opacity 1.2s ease,
+    border-radius 2s var(--ease-ink);
+  will-change: transform;
+}
+
+/* Movimento contínuo e lento: a tinta nunca fica totalmente parada. */
+.ink__drift {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  animation: ink-drift var(--drift-duration, 20s) ease-in-out var(--drift-delay, 0s) infinite alternate;
+}
+
+@keyframes ink-drift {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate3d(2.6vmax, -1.8vmax, 0) rotate(9deg) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-2vmax, 2.2vmax, 0) rotate(-7deg) scale(0.94);
+  }
+}

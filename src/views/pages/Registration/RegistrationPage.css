@@ -1,0 +1,29 @@
+/* Página: centraliza o "baralho" de etapas sobre o fundo de tinta. */
+.registration {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: clamp(1rem, 5vh, 3.5rem) 1.1rem;
+  overflow-x: clip; /* as caixas esperam fora da tela, à direita, sem criar scroll horizontal */
+}
+
+.registration__form {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+/*
+ * O .deck é o "contêiner" das etapas (posicionadas uma sobre a outra).
+ *  - a altura é definida por JS (RegistrationDeck) com a altura da etapa atual e animada aqui;
+ *  - é um container query (@container deck): o layout responde à largura da caixa, não da janela.
+ */
+.deck {
+  container: deck / inline-size;
+  position: relative;
+  width: min(100%, 72rem);
+  min-height: clamp(30rem, 70vh, 42rem);
+  transition: height 0.9s var(--ease-drag);
+}
