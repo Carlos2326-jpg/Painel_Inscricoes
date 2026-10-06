@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { INK_BLOBS, INK_LAYOUTS, INK_SEED } from './inkLayouts.js';
-import './InkBackground.css';
+import { INK_BLOBS, INK_LAYOUTS, INK_SEED } from './InkBackground/inkLayouts.js';
+import '../../_shared/style/components/layout/InkBackground.css';
 
 /** Converte a posição de uma mancha em CSS (transition anima de um layout para o outro). */
 function blobStyle({ x, y, sx, sy, rot, opacity, r }, index) {

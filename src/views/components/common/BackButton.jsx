@@ -1,5 +1,5 @@
-import { ChevronLeftIcon } from '../Icons/Icons.jsx';
-import './BackButton.css';
+import { ChevronLeftIcon } from './Icons/Icons.jsx';
+import '../../_shared/style/components/common/BackButton.css';
 
 export function BackButton({ onClick, disabled = false }) {
   return (

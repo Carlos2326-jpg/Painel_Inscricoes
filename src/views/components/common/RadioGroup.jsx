@@ -1,4 +1,4 @@
-import './RadioGroup.css';
+import '../../_shared/style/components/common/RadioGroup.css';
 
 /** options: [{ value, label }] */
 export function RadioGroup({ legend, name, value, onChange, options }) {

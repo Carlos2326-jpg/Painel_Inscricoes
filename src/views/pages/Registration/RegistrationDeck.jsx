@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
-import { ProgressBar } from '../../components/layout/ProgressBar/ProgressBar.jsx';
-import { StepPanel } from '../../components/layout/StepPanel/StepPanel.jsx';
+import { ProgressBar } from '../../components/layout/ProgressBar.jsx';
+import { StepPanel } from '../../components/layout/StepPanel.jsx';
 import { ACTIVITIES } from '../../../models/activities.js';
 import { STEP, TOTAL_STEPS, stepTitleId } from '../../../models/steps.js';
 import { useEntrance } from '../../../controllers/useEntrance.js';

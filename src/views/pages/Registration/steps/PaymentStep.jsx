@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
-import { PixQrCode } from '../../../components/registration/PixQrCode/PixQrCode.jsx';
-import { Reveal } from '../../../components/common/Reveal/Reveal.jsx';
-import { ActionButton } from '../../../components/common/ActionButton/ActionButton.jsx';
+import { PixQrCode } from '../../../components/registration/PixQrCode.jsx';
+import { Reveal } from '../../../components/common/Reveal.jsx';
+import { ActionButton } from '../../../components/common/ActionButton.jsx';
 import { CheckIcon, CopyIcon, UploadIcon } from '../../../components/common/Icons/Icons.jsx';
 import { EVENT } from '../../../../models/event.js';
 import { STEP, stepTitleId } from '../../../../models/steps.js';
 import { useCopyToClipboard } from '../../../../controllers/useCopyToClipboard.js';
 import { formatCurrency } from '../../../../utils/format.js';
 import { buildPixPayload } from '../../../../utils/pix.js';
-import './PaymentStep.css';
+import '../../../_shared/style/components/pages/Registration/PaymentStep.css';
 
 /** Etapa 3 · Taxa, chave Pix (copiar), QR Code e envio do comprovante por WhatsApp. */
 export function PaymentStep() {

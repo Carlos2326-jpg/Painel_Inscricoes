@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import './ProgressBar.css';
+import '../../_shared/style/components/layout/ProgressBar.css';
 
 /**
  * Barra de progresso independente das caixas: fica em posição absoluta no topo

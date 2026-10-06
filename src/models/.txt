@@ -1,6 +1,0 @@
-# Modelos e acesso a dados (M do MVC)
-
-│   ├── models/                
-│   │   ├── Inscricao.js
-│   │   ├── Usuario.js
-│   │   └── api.js                 # Configuração axios/fetch

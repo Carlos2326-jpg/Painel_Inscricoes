@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { Reveal } from '../../common/Reveal/Reveal.jsx';
-import { BackButton } from '../../common/BackButton/BackButton.jsx';
-import { getPanelState } from './getPanelState.js';
-import './StepPanel.css';
+import { Reveal } from '../common/Reveal.jsx';
+import { BackButton } from '../common/BackButton.jsx';
+import { getPanelState } from './StepPanel/getPanelState.js';
+import '../../_shared/style/components/layout/StepPanel.css';
 
 /**
  * Uma etapa do formulário. Todas as etapas ficam montadas ao mesmo tempo (uma sobre a outra)

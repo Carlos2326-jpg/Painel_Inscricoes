@@ -1,7 +1,7 @@
-import { Reveal } from '../../../components/common/Reveal/Reveal.jsx';
-import { ActionButton } from '../../../components/common/ActionButton/ActionButton.jsx';
+import { Reveal } from '../../../components/common/Reveal.jsx';
+import { ActionButton } from '../../../components/common/ActionButton.jsx';
 import { STEP, stepTitleId } from '../../../../models/steps.js';
-import './SuccessStep.css';
+import '../../../_shared/style/components/pages/Registration/SuccessStep.css';
 
 /** Etapa 4 · Confirmação (tela sem caixa de vidro). */
 export function SuccessStep() {

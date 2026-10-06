@@ -1,5 +1,5 @@
 import { QRCodeSVG } from 'qrcode.react';
-import './PixQrCode.css';
+import '../../_shared/style/components/registration/PixQrCode.css';
 
 /**
  * QR Code do Pix. `payload` é o texto "copia e cola" gerado por utils/pix.js.

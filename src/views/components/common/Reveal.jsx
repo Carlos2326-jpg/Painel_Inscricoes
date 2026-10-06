@@ -1,4 +1,4 @@
-import './Reveal.css';
+import '../../_shared/style/components/common/Reveal.css';
 
 /**
  * Envolve textos/campos/botões de uma etapa para dar a eles a animação de

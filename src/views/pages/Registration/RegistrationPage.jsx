@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '@fontsource-variable/inter';
-import { InkBackground } from '../../components/layout/InkBackground/InkBackground.jsx';
+import { InkBackground } from '../../components/layout/InkBackground.jsx';
 import { ACTIVITIES } from '../../../models/activities.js';
 import { EVENT } from '../../../models/event.js';
 import { STEP, TOTAL_STEPS } from '../../../models/steps.js';
@@ -8,8 +8,8 @@ import { useRegistrationForm } from '../../../controllers/useRegistrationForm.js
 import { useStepper } from '../../../controllers/useStepper.js';
 import { buildReceiptMessage, buildWhatsappUrl } from '../../../utils/whatsapp.js';
 import { RegistrationDeck } from './RegistrationDeck.jsx';
-import './RegistrationTheme.css';
-import './RegistrationPage.css';
+import '../../_shared/style/components/pages/RegistrationTheme.css';
+import '../../_shared/style/components/pages/RegistrationPage.css';
 
 /**
  * Página de inscrição. Um único <form> controla as 4 etapas:

@@ -1,4 +1,4 @@
-import './ActionButton.css';
+import '../../_shared/style/components/common/ActionButton.css';
 
 /**
  * variant: "primary" (vermelho) | "teal" (turquesa, usado no "Finalizar")

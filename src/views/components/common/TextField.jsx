@@ -1,4 +1,4 @@
-import './TextField.css';
+import '../../_shared/style/components/common/TextField.css';
 
 /**
  * Campo de texto com rótulo e mensagem de erro.

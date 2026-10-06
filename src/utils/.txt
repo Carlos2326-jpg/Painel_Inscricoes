@@ -1,5 +1,0 @@
-# Funções auxiliares
-
-│   ├── utils/                     
-│   │   ├── formatters.js
-│   │   └── validators.js

@@ -1,5 +1,5 @@
-import { CheckIcon } from '../../common/Icons/Icons.jsx';
-import './ActivityOption.css';
+import { CheckIcon } from '../common/Icons/Icons.jsx';
+import '../../_shared/style/components/registration/ActivityOption.css';
 
 /**
  * Cartão de uma atividade (multi-seleção) com a situação das vagas:

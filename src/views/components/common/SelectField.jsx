@@ -1,6 +1,6 @@
-import { ChevronDownIcon } from '../Icons/Icons.jsx';
-import '../TextField/TextField.css';
-import './SelectField.css';
+import { ChevronDownIcon } from './Icons/Icons.jsx';
+import '../../_shared/style/components/common/TextField/TextField.css';
+import '../../_shared/style/components/common/SelectField.css';
 
 /**
  * Select nativo (acessível e com o seletor do próprio celular) com visual customizado.

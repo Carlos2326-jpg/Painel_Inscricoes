@@ -1,12 +1,12 @@
-import { Reveal } from '../../../components/common/Reveal/Reveal.jsx';
-import { ActionButton } from '../../../components/common/ActionButton/ActionButton.jsx';
-import { RadioGroup } from '../../../components/common/RadioGroup/RadioGroup.jsx';
-import { SelectField } from '../../../components/common/SelectField/SelectField.jsx';
-import { TextField } from '../../../components/common/TextField/TextField.jsx';
+import { Reveal } from '../../../components/common/Reveal.jsx';
+import { ActionButton } from '../../../components/common/ActionButton.jsx';
+import { RadioGroup } from '../../../components/common/RadioGroup.jsx';
+import { SelectField } from '../../../components/common/SelectField.jsx';
+import { TextField } from '../../../components/common/TextField.jsx';
 import { EVENT } from '../../../../models/event.js';
 import { PERIOD_OPTIONS, STUDENT_OPTIONS } from '../../../../models/registration.js';
 import { STEP, stepTitleId } from '../../../../models/steps.js';
-import './PersonalDataStep.css';
+import '../../../_shared/style/components/pages/Registration/PersonalDataStep.css';
 
 /** Etapa 1 · Nome, CPF, telefone, vínculo com a FATEC e período. */
 export function PersonalDataStep({ values, errors, onChange }) {

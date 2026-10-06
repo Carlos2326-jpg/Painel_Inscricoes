@@ -1,8 +1,8 @@
-import { ActivityOption } from '../../../components/registration/ActivityOption/ActivityOption.jsx';
-import { Reveal } from '../../../components/common/Reveal/Reveal.jsx';
-import { ActionButton } from '../../../components/common/ActionButton/ActionButton.jsx';
+import { ActivityOption } from '../../../components/registration/ActivityOption.jsx';
+import { Reveal } from '../../../components/common/Reveal.jsx';
+import { ActionButton } from '../../../components/common/ActionButton.jsx';
 import { STEP, stepTitleId } from '../../../../models/steps.js';
-import './ActivitiesStep.css';
+import '../../../_shared/style/components/pages/Registration/ActivitiesStep.css';
 
 /** Etapa 2 · Escolha das atividades (com vagas disponíveis/preenchidas). */
 export function ActivitiesStep({ activities, selectedIds, error, onToggle }) {
