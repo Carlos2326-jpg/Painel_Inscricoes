@@ -1,0 +1,29 @@
+.select {
+  position: relative;
+}
+
+.select__control {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.8rem;
+  background: var(--color-surface-dark);
+  cursor: pointer;
+}
+
+.select__control[data-empty='true'] {
+  color: var(--color-text-muted);
+}
+
+.select__control option {
+  background: #2b1650;
+  color: #fff;
+}
+
+.select__icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  font-size: 1.15rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

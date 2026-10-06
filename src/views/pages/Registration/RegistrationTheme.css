@@ -1,0 +1,82 @@
+/*
+ * Tema e reset da página de inscrição.
+ *
+ * Tudo aqui vale SÓ dentro de <main class="registration">: as variáveis (tokens) e o reset
+ * não vazam para o resto do site e não dependem do seu global.jsx.
+ * Os resets usam :where(), que tem especificidade zero, então nunca vencem os estilos dos componentes.
+ */
+.registration {
+  /* Marca */
+  --color-primary: #dd0a52;
+  --color-primary-hover: #f21a63;
+  --color-accent: #fbb92b;
+  --color-teal: #6bc5c9;
+  --color-on-teal: #2b1450;
+
+  /* Superfícies */
+  --color-surface-dark: #2b1650;
+  --color-field: rgba(48, 26, 88, 0.78);
+  --color-field-border: rgba(255, 255, 255, 0.1);
+  --color-glass-border: rgba(170, 205, 240, 0.42);
+
+  /* Texto e estados */
+  --color-text: #ffffff;
+  --color-text-soft: rgba(255, 255, 255, 0.82);
+  --color-text-muted: rgba(255, 255, 255, 0.58);
+  --color-danger: #ffb0c4;
+
+  /* Tipografia */
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Curvas de animação */
+  --ease-drag: cubic-bezier(0.7, 0.02, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 0.84, 0.3, 1);
+  --ease-ink: cubic-bezier(0.6, 0.02, 0.22, 1);
+
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: #1a0a35;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:where(.registration, .registration *, .registration *::before, .registration *::after) {
+  box-sizing: border-box;
+}
+
+:where(.registration) :where(h1, h2, h3, p) {
+  margin: 0;
+}
+
+:where(.registration) :where(button, input, select) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(.registration) :where(fieldset) {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.registration .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.registration, .registration *, .registration *::before, .registration *::after) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}

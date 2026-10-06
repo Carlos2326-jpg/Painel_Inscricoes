@@ -1,0 +1,123 @@
+/*
+ * Todas as etapas ficam uma sobre a outra, ocupando todo o .deck (cuja altura acompanha
+ * a etapa atual). O que muda entre elas é só transform/opacity, controlados por [data-state].
+ */
+.step-panel {
+  --tab: clamp(0.4rem, 2.4cqw, 2rem); /* quanto cada "aba" aparece à esquerda */
+  --pad-x: clamp(1.25rem, 6.5cqw, 4.5rem);
+
+  position: absolute;
+  inset: 0;
+  min-width: 0;
+  outline: none;
+  transition:
+    transform 1s var(--ease-drag),
+    opacity 0.7s ease,
+    clip-path 1s var(--ease-drag),
+    box-shadow 0.9s ease;
+}
+
+/* ---------- Caixa de vidro ---------- */
+.step-panel--glass {
+  border: 1.5px solid var(--color-glass-border);
+  border-radius: clamp(1.25rem, 3.4cqw, 2.25rem);
+  background: linear-gradient(
+    112deg,
+    rgba(20, 12, 54, 0.58) 0%,
+    rgba(96, 78, 150, 0.34) 52%,
+    rgba(150, 132, 205, 0.26) 100%
+  );
+  -webkit-backdrop-filter: blur(22px) saturate(1.2);
+  backdrop-filter: blur(22px) saturate(1.2);
+  box-shadow:
+    0 28px 60px rgba(9, 2, 26, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  /* margem folgada para a sombra não ser cortada (o corte só é usado nas abas, abaixo) */
+  clip-path: inset(-5rem);
+}
+
+/* Camada que "esquenta" o vidro quando a caixa vira aba: mais opaca, mas nunca 100%. */
+.step-panel__tint {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(64, 38, 108, 0.82);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s ease;
+}
+
+.step-panel__body {
+  position: relative;
+  display: grid;
+  align-content: center;
+  height: 100%;
+  /* Etapas que não estão ativas têm conteúdo mais alto que o baralho: sem isso a página ganharia scroll. */
+  overflow: clip;
+  border-radius: inherit;
+}
+
+/* Conteúdo com altura natural: é ele que o StepPanel mede. */
+.step-panel__content {
+  min-width: 0;
+}
+
+.step-panel__back {
+  position: absolute;
+  top: clamp(1.1rem, 4.4cqw, 3.2rem);
+  left: calc(var(--pad-x) - 0.7rem);
+  z-index: 2;
+}
+
+/* ---------- Estados ---------- */
+
+/* Chega da direita até o centro */
+.step-panel--glass[data-state='upcoming'] {
+  z-index: 15;
+  transform: translate3d(110vw, 0, 0);
+}
+
+.step-panel--glass[data-state='active'] {
+  z-index: 20;
+  transform: translate3d(0, 0, 0);
+}
+
+/*
+ * Vira aba de pasta: desliza um pouco para a esquerda, encolhe na vertical e fica mais opaca.
+ * O clip-path deixa visível só a "orelha" da esquerda, então o vidro da caixa ativa
+ * não deixa transparecer o contorno da caixa de trás.
+ */
+.step-panel--glass[data-state='stacked'] {
+  z-index: calc(10 - var(--depth));
+  transform: translate3d(calc(var(--tab) * var(--depth) * -1), 0, 0) scale(1, calc(1 - var(--depth) * 0.055));
+  clip-path: inset(-1rem calc(100% - var(--tab) * var(--depth) - 0.75rem) -1rem -1rem);
+}
+
+/* Na tela final as abas saem para a esquerda e desaparecem */
+.step-panel--glass[data-state='gone'] {
+  z-index: calc(10 - var(--depth));
+  opacity: 0;
+  transform: translate3d(calc(var(--tab) * var(--depth) * -1 - 14vw), 0, 0)
+    scale(1, calc(1 - var(--depth) * 0.055));
+  clip-path: inset(-1rem calc(100% - var(--tab) * var(--depth) - 0.75rem) -1rem -1rem);
+}
+
+/* Abas não projetam sombra própria (a da caixa ativa já sombreia as abas). */
+.step-panel--glass[data-state='stacked'],
+.step-panel--glass[data-state='gone'] {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.step-panel--glass[data-state='stacked'] .step-panel__tint,
+.step-panel--glass[data-state='gone'] .step-panel__tint {
+  opacity: 0.78;
+}
+
+/* ---------- Sem caixa (tela final) ---------- */
+.step-panel--plain {
+  z-index: 1;
+}
+
+.step-panel--plain[data-state='active'] {
+  z-index: 20;
+}

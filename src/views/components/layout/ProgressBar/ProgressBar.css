@@ -1,0 +1,83 @@
+.progress {
+  --dot: 0.95rem;
+  --line-w: clamp(2.6rem, 6.4cqw, 4.9rem);
+  --line-h: 0.28rem;
+
+  position: absolute;
+  top: clamp(1rem, 2.8cqw, 2.2rem);
+  left: 50%;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.progress__dot {
+  position: relative;
+  flex: none;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 50%;
+  background: #fff;
+  transition:
+    transform 0.5s var(--ease-out),
+    box-shadow 0.5s ease;
+}
+
+/* A "gota" vermelha cresce de dentro para fora. */
+.progress__dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--color-primary);
+  transform: scale(0);
+  transition: transform 0.45s var(--ease-out);
+}
+
+.progress__dot[data-on='true']::after {
+  transform: scale(1);
+}
+
+.progress__dot[data-current='true'] {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 0.3rem rgba(221, 10, 82, 0.32);
+}
+
+.progress__line {
+  position: relative;
+  flex: none;
+  width: var(--line-w);
+  height: var(--line-h);
+  overflow: hidden;
+  background: #fff;
+}
+
+.progress__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.7s var(--ease-drag);
+}
+
+.progress__fill[data-on='true'] {
+  transform: scaleX(1);
+}
+
+/* Ao avançar: primeiro a linha corre, depois o ponto novo acende. */
+.progress[data-direction='forward'] .progress__fill {
+  transition-delay: 0.15s;
+}
+
+.progress[data-direction='forward'] .progress__dot,
+.progress[data-direction='forward'] .progress__dot::after {
+  transition-delay: 0.7s;
+}
+
+/* Ao voltar: primeiro o ponto apaga, depois a linha recua. */
+.progress[data-direction='back'] .progress__fill {
+  transition-delay: 0.3s;
+}

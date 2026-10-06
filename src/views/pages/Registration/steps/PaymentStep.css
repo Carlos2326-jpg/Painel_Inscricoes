@@ -1,0 +1,179 @@
+.payment {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'info pix'
+    'action pix';
+  column-gap: clamp(1.5rem, 6.5cqw, 4.5rem);
+  row-gap: 1.6rem;
+  align-content: center;
+  padding: clamp(4rem, 8cqw, 5.5rem) var(--pad-x) clamp(2rem, 4.5cqw, 3.2rem);
+}
+
+.payment__info {
+  grid-area: info;
+  align-self: end;
+  display: grid;
+  gap: 1.15rem;
+  justify-items: start;
+}
+
+.payment__title {
+  font-size: clamp(2rem, 4.6cqw, 3.1rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.payment__subtitle {
+  margin-top: 0.45rem;
+  max-width: 34ch;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--color-text-soft);
+}
+
+/* Caixa da taxa */
+.payment__fee {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 1rem;
+  background: rgba(43, 22, 80, 0.94);
+  box-shadow: 0 10px 22px rgba(10, 0, 30, 0.32);
+}
+
+.payment__fee-label {
+  max-width: 6.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.payment__fee-value {
+  font-size: clamp(1.7rem, 3.4cqw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.payment__how-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.payment__how-text {
+  margin-top: 0.3rem;
+  max-width: 34ch;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--color-text-soft);
+}
+
+/* Lado direito: chave + QR + recebedor */
+.payment__pix {
+  grid-area: pix;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  max-width: 100%;
+}
+
+.payment__key-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 100%;
+}
+
+.payment__key {
+  min-width: 0;
+  font-size: clamp(1.05rem, 2.3cqw, 1.5rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.payment__copy {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.6rem;
+  background: transparent;
+  color: #fff;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.payment__copy:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.payment__copy:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.payment__copy[data-copied='true'] {
+  color: var(--color-teal);
+}
+
+.payment__copied {
+  min-height: 1rem;
+  margin-top: -0.35rem;
+  font-size: 0.75rem;
+  color: var(--color-teal);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.payment__copied[data-visible='true'] {
+  opacity: 1;
+}
+
+.payment__receiver {
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.payment__action {
+  grid-area: action;
+  align-self: start;
+  width: min(100%, 28rem);
+}
+
+/* ---------- Tablet / celular: uma coluna ---------- */
+@container deck (max-width: 760px) {
+  .payment {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      'info'
+      'pix'
+      'action';
+    padding-top: 4.25rem;
+  }
+
+  .payment__info {
+    align-self: start;
+  }
+
+  .payment__action {
+    width: 100%;
+  }
+
+  .payment__pix {
+    width: 100%;
+  }
+}

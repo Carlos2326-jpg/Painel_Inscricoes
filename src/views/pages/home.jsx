@@ -4,10 +4,12 @@ import Footer from "../components/layout/footer";
 
 export default function Home() {
     return (
-        <main>
-            <Header />
-            <Article />
-            <Footer />
-        </main>
+            <body className="body-home">
+                <main>
+                    <Header />
+                    <Article />
+                    <Footer />
+                </main>
+            </body>
     );
 }
